@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   logstash:
     build:
@@ -17,14 +16,12 @@ services:
     expose: 
       - "5044"
     environment:
-      - LS_JAVA_OPTS="-Xmx256m -Xms256m"
       - TENANT_ID=${TENANT_ID}
       - CLIENT_ID=${CLIENT_ID}
       - CLIENT_SECRET=${CLIENT_SECRET}
       - DATA_INGESTION_URI=${DATA_INGESTION_URI}
       - DB_NAME=${DB_NAME}
       - LS_TABLE_NAME_NGINX=${LS_TABLE_NAME_NGINX}        
-
     networks:
       - elk
 
